@@ -1,5 +1,4 @@
 <?php
-include_once("bg.php");
 include_once("config.php");
 include_once("security.php");
 ensure_session_started();
