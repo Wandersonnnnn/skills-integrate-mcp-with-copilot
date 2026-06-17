@@ -102,7 +102,7 @@ if(isset($_POST['master']))
     if($row)
     {
         $_SESSION['master_verified'] = time();
-        header('location:enroll_name_del.php');
+        header('location:enroll_name_del_pro1.php');
         exit;
     }
     else
