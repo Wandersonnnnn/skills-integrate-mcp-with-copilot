@@ -39,7 +39,9 @@ function require_role($roles, $redirect = 'default.php')
 function require_master_verification($redirect = 'deladmin.php')
 {
     ensure_session_started();
-    if (empty($_SESSION['master_verified'])) {
+    $maxAgeSeconds = 300;
+    $verifiedAt = isset($_SESSION['master_verified']) ? (int)$_SESSION['master_verified'] : 0;
+    if ($verifiedAt <= 0 || (time() - $verifiedAt) > $maxAgeSeconds) {
         header('Location: ' . $redirect);
         exit;
     }
