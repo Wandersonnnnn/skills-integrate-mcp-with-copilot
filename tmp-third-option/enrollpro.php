@@ -1,7 +1,6 @@
 <?php
 
 include_once("config.php");
-include_once("bg.php");
 include_once("security.php");
 ob_start();
 ensure_session_started();
