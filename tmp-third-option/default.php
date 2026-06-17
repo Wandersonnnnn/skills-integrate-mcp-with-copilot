@@ -114,6 +114,7 @@ button:hover {
 <TD>
 <select name="utype" required>
 <option class="dropdownlist">STUDENT</option>
+<option class="dropdownlist">FACULTY</option>
 <option class="dropdownlist">ADMINISTRATOR</option>
 </select>
 </TD>
