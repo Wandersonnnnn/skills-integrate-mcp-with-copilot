@@ -69,7 +69,9 @@ function db_prepared_execute($sql, $types = '', $params = array())
 	}
 
 	if ($types !== '' && !empty($params)) {
-		mysqli_stmt_bind_param($stmt, $types, ...$params);
+		$refs = array();
+		foreach ($params as $k => $v) { $refs[$k] = &$params[$k]; }
+		mysqli_stmt_bind_param($stmt, $types, ...$refs);
 	}
 
 	$ok = mysqli_stmt_execute($stmt);
