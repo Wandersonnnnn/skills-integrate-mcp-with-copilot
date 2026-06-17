@@ -1,5 +1,4 @@
 <?php
-include_once("bg.php");
 ob_start();
 session_start();
 unset($_SESSION['stduid2']);
